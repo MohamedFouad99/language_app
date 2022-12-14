@@ -1,59 +1,59 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:language_app/components/item.dart';
+import 'package:language_app/components/list_item.dart';
 
-import '../model/number.dart';
+import '../model/item.dart';
 
 class NumberScreen extends StatelessWidget {
   const NumberScreen({super.key});
-  final List<Number> numbers = const [
-    Number(
+  final List<Item> numbers = const [
+    Item(
         sound: 'number_one_sound.mp3',
         image: 'assets/images/numbers/number_one.png',
         jpNumber: 'ichi',
         enNumber: 'one'),
-    Number(
+    Item(
         sound: 'number_two_sound.mp3',
         image: 'assets/images/numbers/number_two.png',
         jpNumber: 'ni',
         enNumber: 'two'),
-    Number(
+    Item(
         sound: 'number_three_sound.mp3',
         image: 'assets/images/numbers/number_three.png',
         jpNumber: 'san',
         enNumber: 'three'),
-    Number(
+    Item(
         sound: 'number_four_sound.mp3',
         image: 'assets/images/numbers/number_four.png',
         jpNumber: 'shi',
         enNumber: 'four'),
-    Number(
+    Item(
         sound: 'number_five_sound.mp3',
         image: 'assets/images/numbers/number_five.png',
         jpNumber: 'go',
         enNumber: 'five'),
-    Number(
+    Item(
         sound: 'number_six_sound.mp3',
         image: 'assets/images/numbers/number_six.png',
         jpNumber: 'roku',
         enNumber: 'six'),
-    Number(
+    Item(
         sound: 'number_seven_sound.mp3',
         image: 'assets/images/numbers/number_seven.png',
         jpNumber: 'sebun',
         enNumber: 'seven'),
-    Number(
+    Item(
         sound: 'number_eight_sound.mp3',
         image: 'assets/images/numbers/number_eight.png',
         jpNumber: 'hachi',
         enNumber: 'eight'),
-    Number(
+    Item(
         sound: 'number_nine_sound.mp3',
         image: 'assets/images/numbers/number_nine.png',
         jpNumber: 'kyu',
         enNumber: 'nine'),
-    Number(
+    Item(
         sound: 'number_ten_sound.mp3',
         image: 'assets/images/numbers/number_ten.png',
         jpNumber: 'ju',
@@ -70,7 +70,11 @@ class NumberScreen extends StatelessWidget {
       body: ListView.builder(
           itemCount: numbers.length,
           itemBuilder: (context, index) {
-            return Item(number: numbers[index]);
+            return ListItem(
+              number: numbers[index],
+              color: Color(0xFFCFC1AB),
+              itemType: 'numbers',
+            );
           }),
     );
   }

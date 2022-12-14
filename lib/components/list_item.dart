@@ -1,16 +1,22 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-import 'package:language_app/model/number.dart';
+import 'package:language_app/model/item.dart';
 
-class Item extends StatelessWidget {
-  final Number number;
-  const Item({super.key, required this.number});
+class ListItem extends StatelessWidget {
+  final Item number;
+  final Color color;
+  final String itemType;
+  const ListItem(
+      {super.key,
+      required this.number,
+      required this.color,
+      required this.itemType});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFCFC1AB),
+      color: color,
       height: 100,
       child: Row(
         children: [
@@ -19,6 +25,7 @@ class Item extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 18),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -38,7 +45,7 @@ class Item extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 AudioCache player =
-                    AudioCache(prefix: 'assets/sounds/numbers/');
+                    AudioCache(prefix: 'assets/sounds/$itemType/');
                 player.play(number.sound);
               },
               child: Icon(
