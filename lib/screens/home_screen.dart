@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, use_key_in_widget_constructors, must_be_immutable, camel_case_types, prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:language_app/screens/family_member_screen.dart';
 import 'package:language_app/screens/number_screen.dart';
 
 import '../components/category_item.dart';
@@ -35,7 +36,12 @@ class HomeScreen extends StatelessWidget {
               height: 20,
             ),
             cardDesign(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((context) {
+                  return FamilyMemberScreen();
+                })));
+              },
               color: const Color(0xFF929AA2),
               text: 'Family Members..',
             ),
@@ -45,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             cardDesign(
               onTap: () {},
               color: const Color(0xFF3A5154),
-              text: 'Colors..',
+              text: 'Phrases..',
             ),
             const SizedBox(
               height: 20,
@@ -53,7 +59,7 @@ class HomeScreen extends StatelessWidget {
             cardDesign(
               onTap: () {},
               color: const Color(0xFF1D2625),
-              text: 'Phrases..',
+              text: 'Colors..',
             ),
           ],
         ),
