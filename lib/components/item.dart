@@ -1,6 +1,6 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:language_app/model/number.dart';
 
 class Item extends StatelessWidget {
@@ -33,12 +33,19 @@ class Item extends StatelessWidget {
           const Spacer(
             flex: 1,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(right: 16),
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 32,
+            child: InkWell(
+              onTap: () {
+                AudioCache player =
+                    AudioCache(prefix: 'assets/sounds/numbers/');
+                player.play(number.sound);
+              },
+              child: Icon(
+                Icons.play_arrow,
+                color: Colors.white,
+                size: 32,
+              ),
             ),
           )
         ],
